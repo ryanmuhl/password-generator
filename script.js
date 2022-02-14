@@ -1,6 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword () {
+
 
 
 // Assignment code here
@@ -9,7 +9,7 @@ var uppercaseletters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "
 var lowercaseletters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var specialchar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
 
-var numchar = prompt ("Number of Characters from 8 and 128");
+var numchar = prompt ("Number of Characters from 8 to 128");
 var num = confirm ("Do You Want Numbers?");
 var upper = confirm ("Do you Want Upper Case Letters?")
 var lower = confirm ("Do You Want Lower Case Letters?")
@@ -18,6 +18,7 @@ var specchar = confirm ("Do You Want Special Charaters?")
 var array1 = []
 var array2 = []
 
+function generatePassword () {
 if (num) {
     array1 = array1.concat(numbers);
 }
@@ -36,10 +37,13 @@ if (specchar) {
 }
 
 console.log (array1)
-}
+
 
 for (var i = 0; i < numchar; i++) {
-    
+    array2.push (array1[Math.floor(Math.random() * array1.length)]);
+}
+
+return array2.join("");
 }
 
 

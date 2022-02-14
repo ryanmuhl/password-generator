@@ -1,8 +1,14 @@
 // Assignment code here
+function generatePassword () {
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var uppercaseletters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lowercaseletters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var specialchar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+
+
+
+var array1 = []
+var array2 = []
 
 var numchar = prompt ("Number of Characters from 8 to 128");
 var num = confirm ("Do You Want Numbers?");
@@ -10,10 +16,8 @@ var upper = confirm ("Do you Want Upper Case Letters?")
 var lower = confirm ("Do You Want Lower Case Letters?")
 var specchar = confirm ("Do You Want Special Charaters?")
 
-var array1 = []
-var array2 = []
 
-function generatePassword () {
+
 if (num) {
     array1 = array1.concat(numbers);
 }
@@ -31,14 +35,27 @@ if (specchar) {
     array1 = array1.concat(specialchar);
 }
 
+
+
+if (numchar > 128 || numchar < 8) {
+    return ("Number of characters is greater than 128.  Re-Select generate password button and select a number between 1-128.");
+}
+
+
+
+
+
 console.log (array1)
 
-
 for (var i = 0; i < numchar; i++) {
+    
     array2.push (array1[Math.floor(Math.random() * array1.length)]);
+   
 }
 
 return array2.join("");
+
+
 }
 
 
@@ -48,11 +65,15 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+
+    
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
   
+
+
 
 }
 

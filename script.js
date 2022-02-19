@@ -12,15 +12,17 @@ var arrayAll =[];
 function getUserOptions() {
     var numchar = parseInt (prompt("Number of Characters from 8 to 128"));
     
-    if (numchar) {
+    if (numchar && numchar > 7 && numchar < 129) {
         answers.numchar = numchar;
         followup();
     }
 
-    else {
-        alert ("Goodbye!!!!!");
+   else {
+        alert ("Criteria For Password Not Met. Select Generate Password Button To Try Again")
     }
+
 }
+
 
 
 
@@ -52,11 +54,7 @@ getUserOptions();
         arrayAll = arrayAll.concat(specialchar.split(""));
     }
 
-    if (answers.numchar < 8 || answers.numchar > 128){
-        alert ("Number of Characters must be between 8 and 128.");
-        return ("Select Generate Password Button and Try Again")
-        
-    }
+   
 
     // For loop to randomize array
     var arrayFinal  = []

@@ -1,4 +1,4 @@
-// Function Used to collect Data from input and confirm prompts
+// Start Generate Password function and declare variables
 function generatePassword() {
 var answers = {}
 var numbers = "0123456789";
@@ -7,6 +7,8 @@ var lowercaseletters = "abcdefghijklmnopqrstuvwxyz";
 var specialchar = "!#$%&'()*+-./:;<=>?@[]^_`{|\}~";
 var arrayAll =[];
 
+
+//Function to stop promts if cancel is selected for Number of characters
 function getUserOptions() {
     var numchar = parseInt (prompt("Number of Characters from 8 to 128"));
     
@@ -20,40 +22,43 @@ function getUserOptions() {
     }
 }
 
+
+
 function followup() {
-    answers.num = confirm("Do You Want Numbers?");
-    answers.upper = confirm("Do you Want Upper Case Letters?");
-    answers.lower = confirm("Do You Want Lower Case Letters?");
-    answers.specchar = confirm("Do You Want Special Charaters?");
+    answersNum = confirm("Do You Want Numbers?");
+    answersUpper = confirm("Do you Want Upper Case Letters?");
+    answersLower = confirm("Do You Want Lower Case Letters?");
+    answersSpecchar = confirm("Do You Want Special Charaters?");
 }
 
-//Function to generate password
-    
-    getUserOptions();
-   
-    if (answers.num) {
+getUserOptions();
+
+
+// If statements for selecting character type and concating into array   
+    if (answersNum) {
         arrayAll = arrayAll.concat(numbers.split(""));
     }
 
-    if (answers.upper) {
+    if (answersUpper) {
         arrayAll = arrayAll.concat(uppercaseletters.split(""));
    
     }
 
-    if (answers.lower) {
+    if (answersLower) {
         arrayAll = arrayAll.concat(lowercaseletters.split(""));
     }
 
-    if (answers.specchar) {
+    if (answersSpecchar) {
         arrayAll = arrayAll.concat(specialchar.split(""));
     }
 
     if (answers.numchar < 8 || answers.numchar > 128){
-        alert ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and try again.");
-        generatePassword ();
+        alert ("Number of Characters must be between 8 and 128.");
+        return ("Select Generate Password Button and Try Again")
         
     }
 
+    // For loop to randomize array
     var arrayFinal  = []
     for (var i = 0; i < answers.numchar; i++) {
         

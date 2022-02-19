@@ -12,7 +12,14 @@ function getUserOptions() {
     if (numchar) {
         answers.numchar = numchar;
         followup();
-    };
+    }
+
+    else {
+        getUserOptions ();
+
+    }
+   
+
 }
 
 function followup() {
@@ -39,14 +46,14 @@ function generatePassword() {
         arrayAll = arrayAll.concat(lowercaseletters.split(""));
     }
 
-    if (answers.spechar) {
+    if (answers.specchar) {
         arrayAll = arrayAll.concat(specialchar.split(""));
     }
 
     if (answers.numchar < 8 || answers.numchar > 128){
         return ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and select Generate Password Button.");
-
     }
+
 
     
     
@@ -61,7 +68,6 @@ function generatePassword() {
 }
 return (arrayFinal.join (""));
 }
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

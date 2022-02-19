@@ -1,4 +1,4 @@
-// Assignment code here
+// Function Used to collect Data from input and confirm prompts
 function getUserOptions() {
     var numchar = parseInt (prompt("Number of Characters from 8 to 128"));
     var num = confirm("Do You Want Numbers?");
@@ -19,7 +19,7 @@ function getUserOptions() {
 }
 
 
-
+//Function to generate password
 function generatePassword() {
     var userInput = getUserOptions();
     var numbers = "0123456789";
@@ -27,24 +27,44 @@ function generatePassword() {
     var lowercaseletters = "abcdefghijklmnopqrstuvwxyz"
     var specialchar = "!#$%&'()*+-./:;<=>?@[]^_`{|\}~"
     var arrayAll =[];
+    
 
     if (userInput.num) {
         arrayAll = arrayAll.concat(numbers.split(""));
     }
 
-    if (userInput.num) {
+    if (userInput.upper) {
         arrayAll = arrayAll.concat(uppercaseletters.split(""));
+   
     }
 
-    if (userInput.num) {
+    if (userInput.lower) {
         arrayAll = arrayAll.concat(lowercaseletters.split(""));
     }
 
-    if (userInput.num) {
-        arrayAll = arrayAll.concat(specchar.split(""));
+    if (userInput.spechar) {
+        arrayAll = arrayAll.concat(specialchar.split(""));
     }
 
+    if (userInput.numchar < 8 || userInput.numchar > 128){
+        return ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and select Generate Password Button.")
+    }
+    
+    var arrayFinal  = []
+    for (var i = 0; i < userInput.numchar; i++) {
+        
+        arrayFinal.push (arrayAll[Math.floor(Math.random() * arrayAll.length)]);
+        
+       
+       console.log (arrayFinal)
+       
+    
 }
+return (arrayFinal.join (""))
+}
+
+
+
 
 
 // Get references to the #generate element

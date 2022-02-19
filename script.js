@@ -1,4 +1,5 @@
 // Function Used to collect Data from input and confirm prompts
+function generatePassword() {
 var answers = {}
 var numbers = "0123456789";
 var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -16,10 +17,8 @@ function getUserOptions() {
 
     else {
         alert ("Goodbye!!!!!");
-        
+    }
 }
-}
-
 
 function followup() {
     answers.num = confirm("Do You Want Numbers?");
@@ -29,7 +28,7 @@ function followup() {
 }
 
 //Function to generate password
-    function generatePassword() {
+    
     getUserOptions();
    
     if (answers.num) {
@@ -51,11 +50,10 @@ function followup() {
 
     if (answers.numchar < 8 || answers.numchar > 128){
         alert ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and try again.");
-        getUserOptions ();
+        generatePassword ();
         
     }
-    
-    
+
     var arrayFinal  = []
     for (var i = 0; i < answers.numchar; i++) {
         

@@ -6,7 +6,7 @@ Create an application that an employee can use to generate a random password bas
 
 ## Website Functionality/Class Criteria Met
 * When user selects button to Generate Password,  a series of prompts are presented.  At this point,  criteria is selected to include in the password.
-* When user prompted for length of character between 8 and 128,  a number between 8 and 128 can be selected.  If Cancel is selected a promt will state "Goodbye!!!" and prompts will close.  User will need to select Generate Password again to display prompts.  User must type in a number from 8 to 128 for application to proceed. If number between 8 and 128 is not selected.
+* When user prompted for length of character between 8 and 128,  a number between 8 and 128 can be selected.  If Cancel is selected, a promt will state "Goodbye!!!" and prompts will close.  User will need to select Generate Password again to display prompts.  User must type in a number from 8 to 128 for application to proceed.
 * When user is asked for character types to include in the password,  user confirms in separate prompts: Numbers, Upper Case, Lower Case, Special Characters.
 * When user answeres each prompt,  input is validated and at least one of the characters is selected.  If no characters are selected (Cancel for each character type),  nothing will display.
 * When all prompts are Answered and at least one Character is true/ok, a password with specified length and character selection will be displayed/generated to the page.
@@ -29,5 +29,6 @@ https://github.com/ryanmuhl/password-generator
 
 ## Contribution
 Created/Designed by Ryan M. Uhl
+Tutor Assistance: Daniel Ringenbach
 
 Email: ryanmuhl@hotmail.com

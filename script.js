@@ -15,12 +15,11 @@ function getUserOptions() {
     }
 
     else {
-        getUserOptions ();
-
-    }
-   
-
+        alert ("Goodbye!!!!!");
+        
 }
+}
+
 
 function followup() {
     answers.num = confirm("Do You Want Numbers?");
@@ -30,7 +29,7 @@ function followup() {
 }
 
 //Function to generate password
-function generatePassword() {
+    function generatePassword() {
     getUserOptions();
    
     if (answers.num) {
@@ -51,10 +50,10 @@ function generatePassword() {
     }
 
     if (answers.numchar < 8 || answers.numchar > 128){
-        return ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and select Generate Password Button.");
+        alert ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and try again.");
+        getUserOptions ();
+        
     }
-
-
     
     
     var arrayFinal  = []
@@ -63,9 +62,8 @@ function generatePassword() {
         arrayFinal.push (arrayAll[Math.floor(Math.random() * arrayAll.length)]);
        
        console.log (arrayFinal);
-       
-    
 }
+
 return (arrayFinal.join (""));
 }
 

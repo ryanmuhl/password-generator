@@ -10,7 +10,7 @@ Create an application that an employee can use to generate a random password bas
 * When user is asked for character types to include in the password,  user confirms in separate prompts: Numbers, Upper Case, Lower Case, Special Characters.
 * When user answeres each prompt,  input is validated and at least one of the characters is selected.  If no characters are selected (Cancel for each character type),  nothing will display.
 * When all prompts are Answered and at least one Character is true/ok, a password with specified length and character selection will be displayed/generated to the page.
-* If number between 8 and 128 are not selected.  User will validate all prompts.  At the end of prompt selction, a message will display stating "Number of Characters must be between 8 and 128.  Input correct Number of characters and try again".  User will be directed to Number of Character prompt to start again.
+* If number between 8 and 128 are not selected.  User will validate all prompts.  At the end of prompt selction, a message will display stating "Number of Characters must be between 8 and 128.  Message will display in Generate a Password text box stating "Select Generate Password Button and Try Again".
 
 ## Built With
 * HTML

@@ -1,70 +1,66 @@
 // Function Used to collect Data from input and confirm prompts
+var answers = {}
+var numbers = "0123456789";
+var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercaseletters = "abcdefghijklmnopqrstuvwxyz";
+var specialchar = "!#$%&'()*+-./:;<=>?@[]^_`{|\}~";
+var arrayAll =[];
+
 function getUserOptions() {
     var numchar = parseInt (prompt("Number of Characters from 8 to 128"));
-    var num = confirm("Do You Want Numbers?");
-    var upper = confirm("Do you Want Upper Case Letters?")
-    var lower = confirm("Do You Want Lower Case Letters?")
-    var specchar = confirm("Do You Want Special Charaters?")
     
-
-    var answers = {
-        numchar: numchar,
-        num: num,
-        upper: upper,
-        lower: lower,
-        spechar: specchar,
-    }
-
-    return answers;
+    if (numchar) {
+        answers.numchar = numchar;
+        followup();
+    };
 }
 
+function followup() {
+    answers.num = confirm("Do You Want Numbers?");
+    answers.upper = confirm("Do you Want Upper Case Letters?");
+    answers.lower = confirm("Do You Want Lower Case Letters?");
+    answers.specchar = confirm("Do You Want Special Charaters?");
+}
 
 //Function to generate password
 function generatePassword() {
-    var userInput = getUserOptions();
-    var numbers = "0123456789";
-    var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    var lowercaseletters = "abcdefghijklmnopqrstuvwxyz"
-    var specialchar = "!#$%&'()*+-./:;<=>?@[]^_`{|\}~"
-    var arrayAll =[];
-    
-
-    if (userInput.num) {
+    getUserOptions();
+   
+    if (answers.num) {
         arrayAll = arrayAll.concat(numbers.split(""));
     }
 
-    if (userInput.upper) {
+    if (answers.upper) {
         arrayAll = arrayAll.concat(uppercaseletters.split(""));
    
     }
 
-    if (userInput.lower) {
+    if (answers.lower) {
         arrayAll = arrayAll.concat(lowercaseletters.split(""));
     }
 
-    if (userInput.spechar) {
+    if (answers.spechar) {
         arrayAll = arrayAll.concat(specialchar.split(""));
     }
 
-    if (userInput.numchar < 8 || userInput.numchar > 128){
-        return ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and select Generate Password Button.")
+    if (answers.numchar < 8 || answers.numchar > 128){
+        return ("Number of Characters must be between 8 and 128.  Input correct Number of Characters and select Generate Password Button.");
+
     }
+
+    
     
     var arrayFinal  = []
-    for (var i = 0; i < userInput.numchar; i++) {
+    for (var i = 0; i < answers.numchar; i++) {
         
         arrayFinal.push (arrayAll[Math.floor(Math.random() * arrayAll.length)]);
-        
        
-       console.log (arrayFinal)
+       console.log (arrayFinal);
        
     
 }
-return (arrayFinal.join (""))
+return (arrayFinal.join (""));
 }
-
-
-
 
 
 // Get references to the #generate element

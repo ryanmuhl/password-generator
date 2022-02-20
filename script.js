@@ -17,8 +17,11 @@ function getUserOptions() {
         followup();
     }
 
+    
+
    else {
-        alert ("Criteria For Password Not Met. Select Generate Password Button To Try Again")
+       window.alert ("Criteria For Password Not Met. Select Generate Password Button To Try Again");
+       getUserOptions ();
     }
 
 }
@@ -62,10 +65,10 @@ getUserOptions();
         
         arrayFinal.push (arrayAll[Math.floor(Math.random() * arrayAll.length)]);
        
-       console.log (arrayFinal);
 }
 
 return (arrayFinal.join (""));
+
 }
 
 // Get references to the #generate element

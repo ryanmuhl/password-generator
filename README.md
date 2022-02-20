@@ -29,6 +29,7 @@ https://github.com/ryanmuhl/password-generator
 
 ## Contribution
 Created/Designed by Ryan M. Uhl
+
 Tutor Assistance: Daniel Ringenbach
 
 Email: ryanmuhl@hotmail.com
